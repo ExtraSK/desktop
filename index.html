@@ -525,7 +525,7 @@ const WALLPAPERS=[
 ];
 let customWp=store.get('customwp',null);
 
-const DEFAULTS={theme:'dark',accent:'#8b7cf6',wallpaper:'dusk',glass:78,radius:14,animations:true,iconSize:'md',showIcons:true,snap:true,clock24:false,seconds:false,showDate:true,dim:0,username:'nova',wifi:true,night:false,dnd:false,brightness:100,volume:70,muted:false};
+const DEFAULTS={theme:'dark',accent:'#8b7cf6',wallpaper:'dusk',glass:78,radius:14,animations:true,iconSize:'md',showIcons:true,snap:true,clock24:false,seconds:false,showDate:true,dim:0,username:'extra',wifi:true,night:false,dnd:false,brightness:100,volume:70,muted:false};
 let S=Object.assign({},DEFAULTS,store.get('settings',{}));
 const mq=window.matchMedia('(prefers-color-scheme: dark)');
 function resolvedTheme(){return S.theme==='system'?(mq.matches?'dark':'light'):S.theme}
@@ -663,11 +663,10 @@ function seedFS(){
   add('music','Music','folder','root');
   add('downloads','Downloads','folder','root');
   add('trash','Trash','folder',null);
-  add('f1','Welcome.txt','file','desktop','Welcome to DESKTOP\n\nThis is a complete little operating system running inside your browser. Everything you create here is stored locally on this device.\n\nThings to try:\n  * Drag windows by their title bars and resize them from any edge\n  * Drag a window to a screen edge to snap it\n  * Right click the desktop for more options\n  * Open the Terminal and type help\n  * Change the wallpaper and accent color in Settings\n\nA few secrets are hiding around. Good luck.\n');
+  add('f1','Welcome.txt','file','desktop','Welcome to DESKTOP\n\nThis is a complete little operating system running inside your browser. Everything you create here is stored locally on this device.\n\nThings to try:\n  * Drag windows by their title bars and resize them from any edge\n  * Drag a window to a screen edge to snap it\n  * Right click the desktop for more options\n  * Open the Terminal and type help\n  * Change the wallpaper and accent color in Settings\n\nA few secrets are hiding around. Good luck.\n\n - Extra');
   add('f2','Shortcuts.txt','file','documents','Keyboard shortcuts\n\nEscape            Close menus and panels\nF2                Rename the selected item\nDelete            Move the selected item to Trash\nCtrl+C / X / V    Copy, cut and paste items in Files\nCtrl+A            Select everything in Files\nCtrl+L            Clear the terminal\nUp / Down         Terminal command history\nTab               Terminal auto complete\n');
-  add('f3','Project Ideas.md','file','documents','# Project Ideas\n\n1. A tiny weather station using the Music player as a rain machine\n2. Collect wallpapers and rank them\n3. Write a terminal game\n4. Organise the Files app into something useful\n');
-  add('f4','Reading List.txt','file','documents','The Design of Everyday Things\nA Pattern Language\nThe Art of Computer Programming\nGodel, Escher, Bach\n');
-  add('f5','Tracklist.txt','file','music','Midnight Drive, Nova Quartet\nGlass Hours, Halcyon\nStatic Bloom, Violet Static\nLow Tide, Aurelia\nNeon Rain, Cobalt Hours\n\nOpen the Music app to play them.\n');
+  add('f3','Project Ideas.md','file','documents','# Project Ideas\n\n1. A tiny weather station using the Music player as a rain machine\n2. Collect wallpapers and rank them\n3. Write a terminal game\n4. Organise the Files app into something useful\n');eading List.txt','file','documents','The Design of Everyday Things\nA Pattern Language\nThe Art of Computer Programming\nGodel, Escher, Bach\n');
+  add('f4','Tracklist.txt','file','music','Midnight Drive, extra Quartet\nGlass Hours, Halcyon\nStatic Bloom, Violet Static\nLow Tide, Aurelia\nNeon Rain, Cobalt Hours\n\nOpen the Music app to play them.\n');
   return n;
 }
 const fs={
@@ -3139,7 +3138,7 @@ addStyle(`
 `);
 
 const TRACKS=[
-  {title:'Midnight Drive',artist:'Nova Quartet',bpm:84,root:57,scale:[0,2,3,5,7,8,10],prog:[0,5,2,6],dur:168,wave:'sawtooth',drums:true,hue:262,seed:11},
+  {title:'Midnight Drive',artist:'extra Quartet',bpm:84,root:57,scale:[0,2,3,5,7,8,10],prog:[0,5,2,6],dur:168,wave:'sawtooth',drums:true,hue:262,seed:11},
   {title:'Glass Hours',artist:'Halcyon',bpm:68,root:50,scale:[0,2,3,5,7,9,10],prog:[0,3,6,4],dur:142,wave:'sine',drums:false,hue:200,seed:23},
   {title:'Static Bloom',artist:'Violet Static',bpm:100,root:52,scale:[0,2,3,5,7,8,10],prog:[0,2,5,4],dur:156,wave:'triangle',drums:true,hue:318,seed:37},
   {title:'Low Tide',artist:'Aurelia',bpm:60,root:53,scale:[0,2,4,6,7,9,11],prog:[0,1,4,0],dur:184,wave:'sine',drums:false,hue:176,seed:41},
